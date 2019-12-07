@@ -1,9 +1,12 @@
 'use strict'
 
+const Todo = use('App/Models/Todo')
+
 class TodoController {
-  index({ request, response }) {
-    // const todos = Todo.all();
-    response.send({ greeting: "Henlo, Fren!"})
+  async index({ response }) {
+    const todos = await Todo.all()
+
+    response.send(todos.toJSON())
   }
 }
 
