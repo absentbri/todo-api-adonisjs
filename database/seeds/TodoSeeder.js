@@ -26,9 +26,9 @@ class TodoSeeder {
   async run () {
     await Todo.truncate()
 
-    const todo = await Factory
+    await Factory
       .model('App/Models/Todo')
-      .createMany(10)
+      .createMany(50)
   }
 }
 

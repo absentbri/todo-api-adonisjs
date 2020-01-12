@@ -9,6 +9,10 @@ class Todo extends Model {
     return this.belongsTo('App/Models/User')
   }
 
+  static get Serializer () {
+    return use('App/Models/Serializers/JsonSerializer')
+  }
+
 }
 
 module.exports = Todo

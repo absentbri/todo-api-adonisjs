@@ -16,7 +16,7 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/', 'TodoController.index')
+Route.get('/todos', 'TodoController.index')
 
 /*
 Route.get('/', () => {
