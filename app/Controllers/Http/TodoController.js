@@ -22,11 +22,15 @@ class TodoController {
     const todoData = request.only(['completed'])
     const todo = await Todo.find(params.id)
     todo.merge(todoData)
+
     if(await todo.save()) response.send(todo.toJSON())
     else response.code(400)
   }
-  async delete({ request, response, params }){
+  async destroy({ request, response, params }){
+    const todo = await Todo.find(params.id)
 
+    if(await todo.delete()) response.send({}) // should just be a 204 but example API returns empty 200
+    else response.code(400).send({})
   }
 }
 
