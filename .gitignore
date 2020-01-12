@@ -8,5 +8,4 @@ tmp
 .env
 
 # The development sqlite file
-# I want to have this committed as I'm going to seed the data in and want it always available
-#database/*.sqlite
+database/*.sqlite
