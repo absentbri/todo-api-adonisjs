@@ -17,6 +17,8 @@
 const Route = use('Route')
 
 Route.get('/todos', 'TodoController.index')
+Route.post('/todos', 'TodoController.create')
+  .validator('Todo')
 
 /*
 Route.get('/', () => {
