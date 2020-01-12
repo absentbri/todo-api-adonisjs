@@ -22,12 +22,10 @@ class TodoController {
     const todoData = request.only(['completed'])
     const todo = await Todo.find(params.id)
     todo.merge(todoData)
-    const update = await todo.save()
-    console.log(update)
-
-    response.send(todo.toJSON())
+    if(await todo.save()) response.send(todo.toJSON())
+    else response.code(400)
   }
-  async delete({ request, response }){
+  async delete({ request, response, params }){
 
   }
 }

@@ -21,6 +21,7 @@ Route.resource('todos', 'TodoController')
   .validator(
     new Map([
       [['todos.store'], ['StoreTodo']],
+      [['todos.update'], ['UpdateTodo']],
     ])
   )
 
