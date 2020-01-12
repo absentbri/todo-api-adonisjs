@@ -17,6 +17,7 @@
 const Route = use('Route')
 
 Route.resource('todos', 'TodoController')
+  .apiOnly()
   .validator(
     new Map([
       [['todos.store'], ['StoreTodo']],
