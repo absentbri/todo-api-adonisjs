@@ -1,28 +1,59 @@
 # Adonis API application
 
-This is the boilerplate for creating an API server in AdonisJs, it comes pre-configured with.
+Seeds a Todo API app to connect with vue-todo project as back end.
 
-1. Bodyparser
-2. Authentication
-3. CORS
-4. Lucid ORM
-5. Migrations and seeds
+Schema for project based off/to be interoperable with https://jsonplaceholder.typicode.com/todos
 
-## Setup
+### Locally
 
-Use the adonis command to install the blueprint
+#### Setup
+
+Clone this repo then run
 
 ```bash
-adonis new yardstick --api-only
-```
+npm install
+``` 
 
-or manually clone the repo and then run `npm install`.
-
-
-### Migrations
+#### Migrations
 
 Run the following command to run startup migrations.
 
-```js
+```bash
 adonis migration:run
+```
+
+#### Seed test data
+
+```bash
+adonis seed
+```
+
+#### Starting
+
+Run the following to run the server
+
+```bash
+adonis serve --dev
+```
+
+### Docker
+
+#### Manually
+##### interactive
+```
+docker run -it -p 8000:8000 --name todo-api-adonis absentbri/todo-api-adonis
+```
+##### headless
+```
+docker run -d -p 8000:8000 --name todo-api-adonis absentbri/todo-api-adonis
+```
+
+#### Compose
+##### Build on any code changes
+```bash
+docker-compose build
+```
+##### Run
+```bash
+docker-compose up
 ```
