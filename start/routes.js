@@ -16,9 +16,12 @@
 /** @type {typeof import('@adonisjs/framework/src/Route/Manager')} */
 const Route = use('Route')
 
-Route.get('/todos', 'TodoController.index')
-Route.post('/todos', 'TodoController.create')
-  .validator('Todo')
+Route.resource('todos', 'TodoController')
+  .validator(
+    new Map([
+      [['todos.store'], ['StoreTodo']],
+    ])
+  )
 
 /*
 Route.get('/', () => {

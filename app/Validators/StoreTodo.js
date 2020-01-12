@@ -1,6 +1,6 @@
 'use strict'
 
-class Todo {
+class StoreTodo {
   get rules () {
     return {
       title: 'required',
@@ -8,4 +8,4 @@ class Todo {
   }
 }
 
-module.exports = Todo
+module.exports = StoreTodo

@@ -11,7 +11,7 @@ class TodoController {
 
     response.send(todos.toJSON())
   }
-  async create({ request, response }) {
+  async store({ request, response }) {
     const todoData = request.only(['title', 'completed']);
     const todo = await Todo.create(todoData)
 
